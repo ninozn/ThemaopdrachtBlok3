@@ -199,7 +199,7 @@ public class Bedrijf {
 		return true;
 	}
 	
-	
+
 	public void save(Object obj) throws IOException				//opslaan in een object zodat deze later weer kan worden ingelezen
 	{
 		if (obj instanceof Klant)
@@ -211,11 +211,11 @@ public class Bedrijf {
 				oos.writeObject(k);
 				System.out.println(k);
 			}
-			
+
 			oos.close();
 		}
-		
-		if (obj instanceof Auto)			
+
+		if (obj instanceof Auto)
 		{
 			FileOutputStream ois = new FileOutputStream("Autos.obj");
 			ObjectOutputStream oos = new ObjectOutputStream(ois);
@@ -225,7 +225,7 @@ public class Bedrijf {
 			}
 			oos.close();
 		}
-		
+
 		if (obj instanceof Werkorder)
 		{
 			FileOutputStream ois = new FileOutputStream("Werkorder.obj");
@@ -236,7 +236,7 @@ public class Bedrijf {
 			}
 			oos.close();
 		}
-		
+
 		if (obj instanceof Artikel)
 		{
 			FileOutputStream ois = new FileOutputStream("Artikel.obj");
@@ -245,10 +245,10 @@ public class Bedrijf {
 			{
 				oos.writeObject(a);
 			}
-			
+
 			oos.close();
 		}
-		
+
 		if (obj instanceof Monteur)
 		{
 			FileOutputStream ois = new FileOutputStream("Monteur.obj");
@@ -257,12 +257,12 @@ public class Bedrijf {
 			{
 				oos.writeObject(m);
 			}
-			
+
 			oos.close();
 		}
-		
-	
-		
+
+
+
 		if (obj instanceof Factuur)
 		{
 			FileOutputStream ois = new FileOutputStream("Factuur.obj");
@@ -271,10 +271,10 @@ public class Bedrijf {
 			{
 				oos.writeObject(f);
 			}
-			
+
 			oos.close();
 		}
-		
+
 		if (obj instanceof Betaling)
 		{
 			FileOutputStream ois = new FileOutputStream("Betaling.obj");
@@ -283,10 +283,10 @@ public class Bedrijf {
 			{
 				oos.writeObject(b);
 			}
-			
+
 			oos.close();
 		}
-		
+
 		if (obj instanceof Dienst)
 		{
 			FileOutputStream ois = new FileOutputStream("Diensten.obj");
@@ -295,10 +295,10 @@ public class Bedrijf {
 			{
 				oos.writeObject(d);
 			}
-			
+
 			oos.close();
 		}
-		
+
 		if (obj instanceof Parkeerplaats)
 		{
 			FileOutputStream ois = new FileOutputStream("Parkeerplaats.obj");
@@ -306,138 +306,16 @@ public class Bedrijf {
 			oos.writeObject(deParkeerplaats);
 			oos.close();
 		}
-		
+
 		if (obj instanceof Bestelling)
 		{
 			FileOutputStream ois = new FileOutputStream("Bestelling.obj");
 			ObjectOutputStream oos = new ObjectOutputStream(ois);
 			oos.writeObject(deBestelling);
 			oos.close();
-		}	
-	}	
-	
-	public void readKlanten() throws IOException, ClassNotFoundException		//inlezen van object klanten
-	{
-		FileInputStream fis = new FileInputStream("Klanten.obj");
-		ObjectInputStream ois = new ObjectInputStream(fis);	
-		while(ois.readObject() != null)
-		{
-			Object obj = ois.readObject();
-			Klant k = (Klant)obj;
-			deKlanten.add(k);
-		}	
-		ois.close();
-	}
-	
-	public void readAutos() throws IOException, ClassNotFoundException
-	{
-		FileInputStream fis = new FileInputStream("Autos.obj");
-		ObjectInputStream ois = new ObjectInputStream(fis);	
-		while(ois.readObject() != null)
-		{
-			Object obj = ois.readObject();
-			Auto a = (Auto)obj;
-			deAutos.add(a);
-		}	
-		ois.close();
-	}
-	
-	public void readWerkorders() throws IOException, ClassNotFoundException
-	{
-		FileInputStream fis = new FileInputStream("Werkorders.obj");
-		ObjectInputStream ois = new ObjectInputStream(fis);	
-		while(ois.readObject() != null)
-		{
-			Object obj = ois.readObject();
-			Werkorder w = (Werkorder)obj;
-			deWerkorders.add(w);
-		}	
-		ois.close();
-	}
-	
-	public void readArtikelen() throws IOException, ClassNotFoundException
-	{
-		FileInputStream fis = new FileInputStream("Artikelen.obj");
-		ObjectInputStream ois = new ObjectInputStream(fis);	
-		while(ois.readObject() != null)
-		{
-			Object obj = ois.readObject();
-			Artikel a = (Artikel)obj;
-			deArtikelen.add(a);
-		}	
-		ois.close();
-	}
-	
-	public void readMonteurs() throws IOException, ClassNotFoundException
-	{
-		FileInputStream fis = new FileInputStream("Monteurs.obj");
-		ObjectInputStream ois = new ObjectInputStream(fis);	
-		while(ois.readObject() != null)
-		{
-			Object obj = ois.readObject();
-			Monteur m = (Monteur)obj;
-			deMonteurs.add(m);
-		}	
-		ois.close();
-	}
-	
-	
-	public void readFacturen() throws IOException, ClassNotFoundException
-	{
-		FileInputStream fis = new FileInputStream("Facturen.obj");
-		ObjectInputStream ois = new ObjectInputStream(fis);	
-		while(ois.readObject() != null)
-		{
-			Object obj = ois.readObject();
-			Factuur f = (Factuur)obj;
-			deFacturen.add(f);
-		}	
-		ois.close();
-	}
-	
-	public void readBetalingen() throws IOException, ClassNotFoundException
-	{
-		FileInputStream fis = new FileInputStream("Betalingen.obj");
-		ObjectInputStream ois = new ObjectInputStream(fis);	
-		while(ois.readObject() != null)
-		{
-			Object obj = ois.readObject();
-			Betaling b = (Betaling)obj;
-			deBetalingen.add(b);
-		}	
-		ois.close();
-	}
-	
-	public void readDiensten() throws IOException, ClassNotFoundException
-	{
-		FileInputStream fis = new FileInputStream("Diensten.obj");
-		ObjectInputStream ois = new ObjectInputStream(fis);	
-		while(ois.readObject() != null)
-		{
-			Object obj = ois.readObject();
-			Dienst d = (Dienst)obj;
-			deDiensten.add(d);
-		}	
-		ois.close();
-	}
-	public void readParkeerplaats() throws IOException, ClassNotFoundException
-	{
-		FileInputStream fis = new FileInputStream("Parkeerplaats.obj");
-		ObjectInputStream ois = new ObjectInputStream(fis);	
-		Object obj = ois.readObject();
-		Parkeerplaats p = (Parkeerplaats)obj;
-		deParkeerplaats = p;	
-		ois.close();
+		}
 	}
 
-	public void readBestelling() throws IOException, ClassNotFoundException
-	{
-		FileInputStream fis = new FileInputStream("Bestelling.obj");
-		ObjectInputStream ois = new ObjectInputStream(fis);	
-		Object obj = ois.readObject();
-		Bestelling b = (Bestelling)obj;
-		ois.close();
-	}
 	public String geefAlleArtikelen() {
 		String s = "";
 		for (Artikel a : deArtikelen) {
