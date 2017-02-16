@@ -67,14 +67,13 @@ public class Werkorder implements Serializable {
 		}
 		return i;
 	}
-	public boolean voegArtikelRegelToe(ArtikelRegel ar) {
-		boolean b = false;
+
+	public void voegArtikelRegelToe(ArtikelRegel ar) {
 		if(!deArtikelRegels.contains(ar)){
 			deArtikelRegels.add(ar);
-			b = true;
 		}
-		return b;
 	}
+
 	public String toString(){
 		//String datum = java.text.DateFormat.getDateInstance().format(afspraakDatum);
 		String s = wonummer + "\n" + deAuto.getKenteken() + " " + opmerking;
