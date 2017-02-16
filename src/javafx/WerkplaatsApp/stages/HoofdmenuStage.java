@@ -159,8 +159,6 @@ public class HoofdmenuStage extends Application {
 		Canvas canvas = new Canvas(400, 400); // aanmaken canvas voor plaatje
 												// rode auto
 		GraphicsContext gc = canvas.getGraphicsContext2D();
-		Image afbeelding = new Image("auto.png");
-		gc.drawImage(afbeelding, 0, -20, 400, 400);
 
 		VBox vbox = new VBox(2); // aanmaken layout labels een buttons
 		vbox.getChildren().addAll(b1, l1, b2, l2, b3, l3, b4, l4, b5, l5, b6,
